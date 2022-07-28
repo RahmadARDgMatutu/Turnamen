@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="datatabel.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul>
+              <a href="home.html">
+                <li>Home</li>
+              </a>
+              <a href="formulir.html">
+                <li>Formulir</li>
+              </a>
+              <div class="button">
+                <input type="submit" value="Logout" id="log" onclick="logout()">
+              </div>
+            </ul>
+          </nav>
+    </header>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function logout() {
+          var log = document.getElementById("log").value;
+          if (log == log) {
+            swal({
+              title: "Apakah Anda Yakin?",
+              text: "Anda Akan Kembali Ke Halaman Login",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+            })
+              .then((willDelete) => {
+                if (willDelete) {
+                  window.location.href = 'index.html';
+                } else {
+                  swal("Anda Tetap Berada Di Halaman Ini");
+                }
+              });
+            }
+          }
+        </script>
+    <main>
+       <h1 class="a">DAFTAR DATA</h1>
+        <div class="semua">
+        <table id="tabelsaya" class="display">
+          <thead>
+            <tr>
+              <td>Name Team</td>
+              <td>Email</td>
+              <td>Telp</td>
+              <td>Alamat</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>M2p</td>
+              <td>madara@gmail.com</td>
+              <td>082177654435</td>
+              <td>Jl.cempaka</td>
+            </tr>
+            <tr>
+              <td>PST</td>
+              <td>PST@gmail.com</td>
+              <td>08528888888</td>
+              <td>Jl.MERAK</td>
+            </tr>
+            <tr>
+              <td>PSO</td>
+              <td>PSO@gmail.com</td>
+              <td>0821213455432</td>
+              <td>Jl.PUNCAK </td>
+            </tr>
+            <tr>
+              <td>REBS</td>
+              <td>REBS@gmail.com</td>
+              <td>085577633213</td>
+              <td>Jl.ENUK</td>
+            </tr>
+            <tr>
+              <td>EVOS</td>
+              <td>EVOS@gmail.com</td>
+              <td>0843999999</td>
+              <td>Jl. Dayo Dara</td>
+            </tr>
+            <tr>
+              <td>RRQ</td>
+              <td>RRQ@gmail.com</td>
+              <td>0855443323455</td>
+              <td>Jl.KENANGAN</td>
+            </tr>
+            <tr>
+              <td>ONIC</td>
+              <td>ONIC@gmail.com</td>
+              <td>08528765456</td>
+              <td>JL.KURBAN</td>
+            </tr>
+            <tr>
+              <td>AE</td>
+              <td>AE@gmail.com</td>
+              <td>082177453543</td>
+              <td>Jl.CINTA</td>
+            </tr>
+            <tr>
+              <td>AURA</td>
+              <td>AURA@gmail.com</td>
+              <td>083211224637</td>
+              <td>Jl.CEMPEDAK</td>
+            </tr>
+            <tr>
+                <td>REBILLION</td>
+                <td>REBILLION@gmail.com</td>
+                <td>086534456</td>
+                <td>Jl.AYANG</td>
+              </tr>
+              <tr>
+                <td>GPX</td>
+                <td>GPX@gmail.com</td>
+                <td>08224524637</td>
+                <td>Jl.KENANGAN</td>
+              </tr>
+              <tr>
+                <td>IDN</td>
+                <td>IDN@gmail.com</td>
+                <td>084321344637</td>
+                <td>Jl.IRMAN</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script>
+      $(document).ready(function(){
+        $("#tabelsaya").DataTable();
+      });
+    </script>
+  </body>
+</html>

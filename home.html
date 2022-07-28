@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="home">
+        <div class="sidebar">
+            <div class="nama">
+                <h4>Rahmad A.R. Dg. Matutu <br>F55121042</h4>
+            </div>
+            <ul> 
+                <li><i class="fas fa-home"></i><a href="Home.html" class="title">Home</a></li>
+                <li><i class="fas fa-home"></i><a href="data table.html" class="title">Data Table</a></li>
+                <li><i class="fas fa-home"></i><a href="Formulir.html" class="title">Formulir</a></li>
+                <div class="button">
+                    <input type="submit" value="Logout" id="log" onclick="logout()">
+                  </div>
+            </ul>
+        </div>
+        <div class="utm">
+            <div class="ats">
+                <div class="dlm">
+                    <div class="isi">
+                        <h1>SELAMAT DATANG RAHMAD <br> DI HALAMAN ADMIN PENDAFTARAN TURNAMENT </h1>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function logout() {
+          var log = document.getElementById("log").value;
+          if (log == log) {
+            swal({
+              title: "Apakah Anda Yakin?",
+              text: "Anda Akan Kembali Ke Halaman Login",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+            })
+              .then((willDelete) => {
+                if (willDelete) {
+                  window.location.href = 'index.html';
+                } else {
+                  swal("Anda Tetap Berada Di Halaman Ini");
+                }
+              });
+            }
+          }
+        </script>
+</body>
+</html>

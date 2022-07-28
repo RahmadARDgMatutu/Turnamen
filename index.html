@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Login Form</div>
+        <form action="#">
+          <div class="field">
+            <input type="text" placeholder="Masukkan Email" id="username" />
+          </div>
+          <div class="field">
+            <input
+              type="password"
+              placeholder="Masukkan Password"
+              id="password"
+            />
+          </div>
+          <div class="content">
+            <input type="checkbox" name="" id="ingat" />
+            <label for="ingat">Ingatkan saya</label>
+            <a href="#">Lupa Password</a>
+          </div>
+        </form>
+        <div class="button">
+          <input type="submit" value="Login" onclick="checkform()" />
+        </div>
+        <div class="signup">
+          Belum punya akun?<a href="#"> Daftar Sekarang</a>
+        </div>
+      </div>
+
+      <!-- Sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      function checkform() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username == "" || password == "") {
+          swal("Maaf", "Data Tidak Boleh Kosong!", "error");
+        } else {
+          swal({
+            title: "Berhasil!",
+            text: "Anda berhasil Login!",
+            icon: "success",
+          })
+          .then((lanjut) => {
+            if (lanjut) {
+              window.location.href = "home.html";
+            }
+          });
+        }
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formulir.css">
+</head>
+<body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      function logout() {
+        var log = document.getElementById("log").value;
+        if (log == log) {
+          swal({
+            title: "Apakah Yakin?",
+            text: "Kembali kehalaman login",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              window.location.href = "index.html";
+            } else {
+              swal("Anda Tetap Berada Di Halaman Ini");
+            }
+          });
+        }
+      }
+
+      function daftar() {
+      
+      var email = document.querySelector('#email').value
+      console.log(email)
+
+      var full = document.querySelector('#full').value
+      console.log(full)
+
+      var telp = document.querySelector('#telp').value
+      console.log(telp)
+
+      if (email == "" || full == "" || telp==""|| alamat == "" ) {
+        swal("Maaf", "Datamu Kosong", "error");
+      } else {
+        swal({
+          title: "BERHASIL",
+          text: "Data Telah Terisi!",
+          icon: "success",
+        });
+      }
+    }
+    </script>
+    <header>
+        <nav>
+            <ul>
+              <a href="home.html"><li>Home</li></a>
+              <a href="data table.html"><li>Data Tabel</li></a>
+              <div class="button2">
+                <input type="submit" value="Logout" id="log" onclick="logout()" />
+              </div>
+            </ul>
+          </nav>
+    </header>
+    <main>
+       <div class="t"></div> 
+      <div class="buka">
+        <h1>REGISTRASI TURNAMENT</h1>
+      </div>
+
+      <div class="registrasi">
+        <form action="#">
+          <div class="booking">
+            <div class="input-box">
+              <span class="detail">Nama Team</span>
+              <input type="text" id="full"/>
+            </div>
+            <div class="input-box">
+              <span class="detail">Email</span>
+              <input type="email" id="email"/>
+            </div>
+
+            <div class="input-box">
+              <span class="detail">NO Tlpn</span>
+              <input type="number" id="telp"/>
+            </div>
+
+            <div class="input-box">
+              <span class="detail">Nama Turnament</span>
+              <input type="text"  id="alamat"/>
+            </div>
+          </div>
+          
+          <div class="button">
+            <input type="submit" value="DAFTAR" onclick="daftar()" />
+          </div>
+        </form>
+      </div>
+    </div>
+    </main>
+</body>
+</html>
